@@ -13,11 +13,6 @@ public class CharacterColisionDetector : MonoBehaviour
         if (character != null)
         {
             allCharacterInRange.Add(character);
-            if (closestCharacter != GetClosestCharacter())
-            {
-                closestCharacter = character;
-                closestCharacter.OnSelected();
-            }
         }
     }
     void OnTriggerExit(Collider other)
@@ -28,7 +23,19 @@ public class CharacterColisionDetector : MonoBehaviour
             if (character == closestCharacter)
                 character.OnDeselected();
             allCharacterInRange.Remove(character);
-            closestCharacter = GetClosestCharacter();
+        }
+    }
+
+    void Update()
+    {
+        var character = GetClosestCharacter();
+        if (closestCharacter != character)
+        {
+            if (closestCharacter != null)
+                closestCharacter.OnDeselected();
+            if (character != null)
+                character.OnSelected();
+            closestCharacter = character;
         }
     }
 

@@ -15,7 +15,6 @@ public class NPC : MonoBehaviour, IInteractableCharacter
     {
         collider = GetComponent<Collider>();
         interactionBubble = GetComponentInChildren<InteractionBubble>();
-
     }
     private void Start()
     {
@@ -30,7 +29,6 @@ public class NPC : MonoBehaviour, IInteractableCharacter
 
     public void OnSelected()
     {
-        Debug.Log("Select npc " + Name);
         interactionBubble.Show();
         interactionBubble.OnSelected();
     }

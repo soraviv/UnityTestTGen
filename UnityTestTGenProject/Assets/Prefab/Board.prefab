@@ -129,7 +129,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 693822586c44fce4e8b2b545e741f005, type: 2}
   m_InitialState: 0
-  m_WrapMode: 0
+  m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -152,7 +152,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 1.5, z: 0.05}
+  m_Size: {x: 2.5, y: 2.198, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2288073876032772270
 MonoBehaviour:
@@ -755,6 +755,7 @@ GameObject:
   - component: {fileID: 2112953015923227714}
   - component: {fileID: 1985917024596475815}
   - component: {fileID: 6185656694032513044}
+  - component: {fileID: 7431879337435293852}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -839,6 +840,7 @@ MonoBehaviour:
   eventsToTrigger:
   - {fileID: 2112953015923227714}
   - {fileID: 1985917024596475815}
+  - {fileID: 7431879337435293852}
 --- !u!114 &2112953015923227714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,6 +880,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.21, y: 2.28, z: 0.2}
   m_Center: {x: 0.0000019073486, y: 0, z: 0}
+--- !u!114 &7431879337435293852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7286464091428888396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2484f8320e770f34f9b36e61b7a26388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObjectState: 0
+  gameObjectsToSetActive:
+  - {fileID: 4244016214416973730}
 --- !u!1 &7547419349089511000
 GameObject:
   m_ObjectHideFlags: 0
