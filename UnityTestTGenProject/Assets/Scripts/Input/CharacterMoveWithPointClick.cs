@@ -17,13 +17,10 @@ public class CharacterMoveWithPointClick : PlayerInputMethodBase
             return;
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("MouseClick");
             if (RaycastFromMouse(out RaycastHit hitInfo))
             {
-                Debug.Log("Ray hit");
                 moveToDestination = true;
                 worldDestination = hitInfo.point;
-                Debug.Log("Move to " + worldDestination);
                 Debug.DrawLine(worldDestination, worldDestination + Vector3.up * 10, Color.red, 10);
             }
         }
@@ -34,7 +31,6 @@ public class CharacterMoveWithPointClick : PlayerInputMethodBase
         }
         else if (moveToDestination)
         {
-            Debug.Log("reached");
             StopAnimation();
             moveToDestination = false;
         }
@@ -43,7 +39,7 @@ public class CharacterMoveWithPointClick : PlayerInputMethodBase
     private bool RaycastFromMouse(out RaycastHit hitInfo)
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        return Physics.Raycast(ray, out hitInfo, 100);//, LayerMask.NameToLayer("Ground"));
+        return Physics.Raycast(ray, out hitInfo, 100);
     }
 
     private void MoveCharacterForward()
@@ -56,8 +52,6 @@ public class CharacterMoveWithPointClick : PlayerInputMethodBase
         var lookAtPosition = worldDestination;
         lookAtPosition.y = transform.position.y;
         transform.LookAt(lookAtPosition);
-        //var targetRotation = Quaternion.LookRotation(desiredMovePosition);
-        //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, desiredRotationSpeed);
     }
 
     private float DistanceFromDestination()

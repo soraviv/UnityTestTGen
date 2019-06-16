@@ -9,7 +9,6 @@ public class ClickListener : MonoBehaviour
     private void OnMouseDown()
     {
         onClickEvent?.Invoke();
-        Debug.Log("Clicked "+ gameObject.name);
     }
 
 }

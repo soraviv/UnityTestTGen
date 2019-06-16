@@ -15,7 +15,6 @@ public class ShowPopupEvent : BaseGameEvent
 
     private void TriggerOtherEvent()
     {
-        Debug.LogError("Popup confirm");
         foreach (var eventToTrigger in eventsToTrigger)
             eventToTrigger?.TriggerEvent(this.eventTarget);
     }
