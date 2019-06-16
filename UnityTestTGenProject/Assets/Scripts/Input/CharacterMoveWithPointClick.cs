@@ -10,11 +10,16 @@ public class CharacterMoveWithPointClick : PlayerInputMethodBase
 
     private Vector3 worldDestination;
 
+    public LayerMask raycastingMask;
+
     private bool moveToDestination = false;
     public override void UpdatePlayerMovement()
     {
         if (!receiveInput)
+        {
+            moveToDestination = false;
             return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             if (RaycastFromMouse(out RaycastHit hitInfo))
@@ -39,7 +44,7 @@ public class CharacterMoveWithPointClick : PlayerInputMethodBase
     private bool RaycastFromMouse(out RaycastHit hitInfo)
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        return Physics.Raycast(ray, out hitInfo, 100);
+        return Physics.Raycast(ray, out hitInfo, 100, raycastingMask);
     }
 
     private void MoveCharacterForward()

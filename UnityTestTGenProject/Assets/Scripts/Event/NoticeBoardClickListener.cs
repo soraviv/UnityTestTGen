@@ -8,7 +8,7 @@ public class NoticeBoardClickListener : MonoBehaviour
     private static GameObject cloneObject;
     private void OnMouseDown()
     {
-        if (cloneObject == null)
+        if (cloneObject == null && GameController.CurrentPlayerState is PlayerState.Menu)
         {
             SpawnClone();
             MoveToCamera();
